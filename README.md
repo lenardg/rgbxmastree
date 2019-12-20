@@ -2,6 +2,8 @@
 
 A simple python script to drive the Pi Hut's RGB Xmas Tree with various light programs.
 
+Check it out in action: https://youtu.be/rQD-u-q7rIA
+
 ## The hardware
 
 You will need a Raspberry Pi and of course the [RGB Xmas Tree](https://thepihut.com/collections/featured-products/products/3d-rgb-xmas-tree-for-raspberry-pi)
