@@ -17,9 +17,11 @@ sudo apt install python3-gpiozero python3-pigpio
 
 (I needed to install these, these instructions were missing from the project page)
 
+The included tree.py is the library that drives the tree. 
+
 ## This code
 
-You can then just run this code with `python3 xmastree.py`.
+You can then just run this code with `python3 xmastree.py`. The xmastree.py file contains several different lightning modes.
 
 There are several modes that will show up in random. Feel free to tweak the main function in order to see more or less of a certain effect.
 
