@@ -5,7 +5,7 @@ from colorzero import Hue, Color
 from random import randint, random, choice
 
 tree = RGBXmasTree()
-tree.brightness = 0.5
+tree.brightness = 0.2 
 
 def red_to_blue(duration):
     hue = 1.0
