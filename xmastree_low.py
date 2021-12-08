@@ -3,9 +3,14 @@ from time import sleep
 import sys
 from colorzero import Hue, Color
 from random import randint, random, choice
+from datetime import datetime
 
 tree = RGBXmasTree()
-tree.brightness = 0.2 
+tree.brightness = 0.1 
+
+def nightlight(duration):
+    tree.color = Color('red')
+    sleep(duration)
 
 def red_to_blue(duration):
     hue = 1.0
@@ -137,16 +142,28 @@ def lighthouse(duration):
 
 
 def main(tree):
+    is_night = False
+
     while True:
-        duration = randint(10,30)
-        nextf = randint(1,3)
-        #nextf = 1
-        if nextf == 1:
-            red_to_blue(duration)
-        elif nextf == 2:
-            classical(duration)
-        elif nextf == 3:
-            sparkle2(duration)
+        now = datetime.now()
+        if now.hour > 21 or now.hour < 5:
+            tree.brightness = 0.05
+            is_night = True
+        else:
+            tree.brightness = 0.1
+            is_night = False
+
+        if is_night:
+            nightlight(60)
+        else:
+            duration = randint(10,30)
+            nextf = randint(1,3)
+            if nextf == 1:
+                red_to_blue(duration)
+            elif nextf == 2:
+                classical(duration)
+            elif nextf == 3:
+                sparkle2(duration)
 
 try:
     main(tree)
